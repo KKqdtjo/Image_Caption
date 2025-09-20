@@ -203,7 +203,7 @@ def show_visual_results_single_image(model, data_loader, vocab, device, img_dir,
     
     print("✅ 单图多标注展示完成！")
 
-def show_visual_results_diverse_images(model, data_loader, vocab, device, img_dir, split_name, num_samples=4):
+def show_visual_results_diverse_images(model, data_loader, vocab, device, img_dir, split_name, num_samples=15):
     """展示多张不同图片，每张一个标注"""
     print(f"\n📸 多图单标注展示模式（{num_samples}张不同图片）...")
     
@@ -326,7 +326,7 @@ def show_visual_results_diverse_images(model, data_loader, vocab, device, img_di
     
     print(f"\n✅ 多图展示完成！")
 
-def show_visual_results(model, data_loader, vocab, device, img_dir, split_name, mode='diverse', num_samples=4):
+def show_visual_results(model, data_loader, vocab, device, img_dir, split_name, mode='diverse', num_samples=15):
     """可视化展示模型生成效果
     
     Args:
@@ -405,7 +405,7 @@ def evaluate_model(args):
         print("-" * 50)
     
     # 可视化展示生成效果
-    show_visual_results(model, test_loader, vocab, device, args.img_dir, args.split, args.visual_mode, num_samples=4)
+    show_visual_results(model, test_loader, vocab, device, args.img_dir, args.split, args.visual_mode, num_samples=15)
     
     # 保存评估结果
     results = {
